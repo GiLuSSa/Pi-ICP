@@ -373,10 +373,10 @@ else:
     #Output the lists for postprocessing of crack width or something
     w_r_exp = th.list_to_tree(np.ndarray.tolist(wr), source=[0,0]) #This is practicaly black magic to convert a numpy array into a grashopper tree
 
-    """-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^""" #DIOBUG
-    """-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^""" #DIOBUG
-    """-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^""" #DIOBUG
-    """-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^""" #DIOBUG
+    """-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^""" #BUG
+    """-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^""" #BUG
+    """-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^""" #BUG
+    """-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^""" #BUG
 
     alphaVec = wr[0, :]
 
@@ -434,7 +434,7 @@ else:
             
             #A matrix
             """
-            print("DIOCAN")
+            print("Bobbobeo")
             print("a_alphar", sparse.linalg.norm(a_alphar))
             print("A_FEM", sparse.linalg.norm(A_FEM))
             print("a_alphar @ A_FEM", sparse.linalg.norm(a_alphar @ A_FEM))
@@ -511,7 +511,7 @@ else:
 
 
 
-    """-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^""" #END DIOBUG
+    """-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^""" #END BUG
 
 
 
@@ -560,7 +560,7 @@ principalStrainLocal = [] #Here the eigen problem is solved to have principal st
 eigenSign = []
 for tensor in strainTensor:
     eigenval, eigenvec = linalg.eig(tensor) #magic *-*
-    eigenval = eigenval.real #Fuck the imaginary part which is 0
+    eigenval = eigenval.real #**** the imaginary part which is 0
     eigenSign.append(np.sign(eigenval[0]))
     eigenSign.append(np.sign(eigenval[1]))
     principalStrainLocal.append([[eigenval[0]*eigenvec[0,0],eigenval[1]*eigenvec[0,1],0],[eigenval[0]*eigenvec[1,0],eigenval[1]*eigenvec[1,1],0],[0,0,0]])
